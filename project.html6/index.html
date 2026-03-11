@@ -1,0 +1,194 @@
+<!DOCTYPE html> <!-- تعريف نوع المستند كـ HTML5 -->
+<html lang="en"> <!-- بداية وسم HTML مع تحديد اللغة الإنجليزية -->
+<head> <!-- رأس الصفحة المحتوي على المعلومات غير المرئية -->
+    <meta charset="UTF-8"> <!-- تحديد ترميز الحروف العالمي ليدعم جميع الرموز -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ضبط أبعاد الموقع لتناسب جميع الشاشات والموبايل -->
+    <title>Nike | Future of Speed</title> <!-- اسم الموقع الذي يظهر في المتصفح -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- استدعاء مكتبة Tailwind لتنسيق الموقع عبر الكلاسات -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet"> <!-- استيراد خط Inter من جوجل -->
+    <style> /* بداية قسم تنسيقات CSS المخصصة */
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #ffffff; scroll-behavior: smooth; overflow-x: hidden; } /* إعدادات الخط والخلفية وتنعيم التمرير ومنع الخروج العرضي */
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.05); } /* ستايل الزجاج الشفاف مع التغبيش */
+        .bg-text { font-size: 15vw; font-weight: 900; color: rgba(255, 255, 255, 0.05); position: absolute; z-index: -1; line-height: 0.8; pointer-events: none; } /* تنسيق النص العملاق في الخلفية */
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(-15deg); } 50% { transform: translateY(-20px) rotate(-10deg); } } /* تعريف حركة الطفو (صعود وهبوط) */
+        .floating-shoe { animation: float 6s ease-in-out infinite; will-change: transform; } /* تطبيق حركة الطفو على صورة الحذاء باستمرار */
+        .product-card:hover .product-img { transform: translateY(-15px) rotate(-5deg); } /* تحريك صورة المنتج عند مرور الماوس على الكارت */
+        .glow-red { box-shadow: 0 0 50px rgba(255, 0, 0, 0.1); } /* إضافة توهج أحمر خفيف حول العنصر */
+        ::-webkit-scrollbar { width: 6px; } /* تحديد عرض شريط التمرير الجانبي */
+        ::-webkit-scrollbar-track { background: #050505; } /* لون مسار شريط التمرير */
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; } /* شكل ولون مقبض شريط التمرير */
+        .hero-main-img { transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform; } /* تنعيم حركة الحذاء الرئيسي */
+        .hero-main-img:hover { transform: rotate(0deg); } /* تعديل زاوية الحذاء عند وقوف الماوس عليه */
+    </style> <!-- نهاية قسم الـ CSS -->
+</head>
+<body> <!-- بداية محتوى الصفحة المرئي -->
+
+    <nav class="flex justify-between items-center px-10 py-6 fixed w-full top-0 z-[100] glass border-b border-white/5"> <!-- شريط التنقل العلوي المثبت بتأثير الزجاج -->
+        <div class="w-16"> <!-- حاوية الشعار مع تحديد العرض -->
+            <svg viewBox="0 0 24 24" fill="white" class="w-14 hover:opacity-70 transition cursor-pointer"><path d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108l-.164.125c-.411.329-.8.658-1.15.983-.141.131-.233.223-.233.223l.114-.141C5.641 7.641 7.35 6.131 9.383 5.438c1.192-.403 2.441-.531 3.72-.383l7.897 3.664z"/></svg> <!-- شعار نايكي بصيغة SVG -->
+        </div>
+        <ul class="hidden lg:flex gap-12 font-bold uppercase tracking-[0.2em] text-[11px]"> <!-- قائمة الروابط (تظهر فقط في الشاشات الكبيرة) -->
+            <li><a href="#" class="hover:text-red-500 transition-all">New Releases</a></li> <!-- رابط الإصدارات الجديدة -->
+            <li><a href="#" class="hover:text-red-500 transition-all">Men</a></li> <!-- رابط الرجال -->
+            <li><a href="#" class="hover:text-red-500 transition-all">Women</a></li> <!-- رابط النساء -->
+            <li><a href="#" class="hover:text-red-500 transition-all">Collections</a></li> <!-- رابط المجموعات -->
+            <li><a href="#" class="hover:text-red-500 transition-all">Sale</a></li> <!-- رابط التخفيضات -->
+        </ul>
+        <div class="flex gap-8 items-center"> <!-- حاوية أيقونات البحث والسلة -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer hover:text-red-500 transition"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <!-- أيقونة البحث -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer hover:text-red-500 transition"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> <!-- أيقونة سلة المشتريات -->
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20 px-10"> <!-- القسم الرئيسي (Hero) في أول الصفحة -->
+        <div class="bg-text top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">NIKE AIR</div> <!-- النص العملاق الشفاف المتمركز في المنتصف -->
+        <div class="container mx-auto grid lg:grid-cols-2 gap-10 items-center"> <!-- شبكة تقسيم المحتوى لنصفين (نصوص وصورة) -->
+            <div class="z-10 relative"> <!-- الجزء الأيسر: النصوص والأزرار -->
+                <div class="absolute -top-10 left-0 w-64 lg:w-80 z-20 pointer-events-none"> <!-- حاوية الحذاء الصغير المتحرك -->
+                    <img src="/MyPhoto_3_10_2026_10_16_52_AM.png" alt="Small Shoe" class="floating-shoe w-full opacity-90"> <!-- صورة الحذاء مع أنيميشن الطفو -->
+                </div>
+                <p class="text-red-500 font-bold tracking-[0.4em] mb-4 uppercase text-sm">Now Available</p> <!-- نص ترويجي صغير أحمر -->
+                <h1 class="text-7xl xl:text-[140px] font-black italic leading-[0.8] uppercase mb-8 relative">Air Max<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-500 to-gray-800">Infinity</span></h1> <!-- العنوان الرئيسي الضخم بتأثير التدرج اللوني -->
+                <p class="text-gray-500 max-w-md text-lg leading-relaxed mb-10 border-l-2 border-red-600 pl-6">Pushing the boundaries of what's possible. The new Air Max Infinity features 360-degree cushioning.</p> <!-- وصف قصير للمنتج مع خط أحمر جانبي -->
+                <div class="flex items-center gap-6"> <!-- حاوية أزرار الإجراءات -->
+                    <button class="bg-white text-black px-10 py-5 rounded-full font-black uppercase text-xs tracking-widest hover:bg-red-600 hover:text-white transition duration-500 shadow-2xl">Shop Now</button> <!-- زر التسوق الأساسي -->
+                    <button class="text-white border-b-2 border-red-600 pb-1 font-bold uppercase text-xs tracking-widest hover:text-red-500 transition">View Story</button> <!-- زر القصة التكميلي -->
+                </div>
+            </div>
+            <div class="relative flex justify-center items-center"> <!-- الجزء الأيمن: الصورة الكبيرة للحذاء -->
+                <div class="absolute w-[500px] h-[500px] bg-red-600/10 blur-[150px] rounded-full"></div> <!-- توهج إضاءة أحمر خلف الحذاء -->
+                <img src="/MyPhoto_3_10_2026_11_03_38_AM.png" alt="Main Shoe" class="hero-main-img w-full rotate-[-20deg] drop-shadow-[0_50px_50px_rgba(0,0,0,1)] z-20 cursor-crosshair"> <!-- صورة الحذاء المائلة مع تأثير الظل والتدوير عند الهوفر -->
+            </div>
+        </div>
+    </section>
+
+    <section id="shop" class="py-32 px-10 glass mx-4 lg:mx-10 rounded-[60px] glow-red"> <!-- قسم استعراض المنتجات المميزة بتصميم منحني وتوهج -->
+        <div class="flex justify-between items-end mb-20 px-6"> <!-- الهيدر الخاص بقسم المنتجات -->
+            <div> <!-- حاوية العنوان والوصف -->
+                <h2 class="text-5xl font-black italic uppercase">Featured Drops</h2> <!-- عنوان القسم -->
+                <p class="text-gray-500 mt-2">The latest innovation in performance and style.</p> <!-- وصف القسم -->
+            </div>
+            <div class="hidden md:flex gap-4"> <!-- أزرار التنقل (يمين/يسار) -->
+                <button class="p-4 border border-white/10 rounded-full hover:bg-white/10 transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button> <!-- زر السابق -->
+                <button class="p-4 border border-white/10 rounded-full hover:bg-white/10 transition"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button> <!-- زر التالي -->
+            </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6"> <!-- شبكة عرض المنتجات (4 أعمدة) -->
+            <div class="product-card group cursor-pointer"> <!-- كارت المنتج الأول -->
+                <div class="bg-[#0a0a0a] aspect-square rounded-[50px] flex items-center justify-center relative overflow-hidden mb-6 border border-white/5 shadow-inner"> <!-- خلفية الحذاء بداخل الكارت -->
+                    <span class="absolute top-8 left-8 text-[10px] font-bold tracking-widest uppercase py-1.5 px-4 glass rounded-full z-10">New Arrival</span> <!-- ملصق "وصول جديد" -->
+                    <img src="/نايك سودا.webp" class="product-img w-4/5 transition-all duration-700"> <!-- صورة الحذاء الأول -->
+                </div>
+                <div class="flex justify-between items-start"> <!-- بيانات المنتج (الاسم والسعر) -->
+                    <div><h3 class="text-xl font-bold italic uppercase">Air Max Plus</h3><p class="text-gray-500 text-sm">Men's Shoes</p></div> <!-- الاسم والنوع -->
+                    <p class="text-xl font-black">$180</p> <!-- السعر -->
+                </div>
+            </div>
+            <div class="product-card group cursor-pointer"> <!-- كارت المنتج الثاني -->
+                <div class="bg-[#0a0a0a] aspect-square rounded-[50px] flex items-center justify-center relative overflow-hidden mb-6 border border-white/5"> <!-- خلفية الحذاء -->
+                    <img src="/blavk nike.webp" class="product-img w-4/5 transition-all duration-700"> <!-- صورة الحذاء الثاني -->
+                </div>
+                <div class="flex justify-between items-start"> <!-- بيانات المنتج الثاني -->
+                    <div><h3 class="text-xl font-bold italic uppercase">Air Force 1</h3><p class="text-gray-500 text-sm">Classic White</p></div> <!-- الاسم والنوع -->
+                    <p class="text-xl font-black">$115</p> <!-- السعر -->
+                </div>
+            </div>
+            <div class="product-card group cursor-pointer"> <!-- كارت المنتج الثالث -->
+                <div class="bg-[#0a0a0a] aspect-square rounded-[50px] flex items-center justify-center relative overflow-hidden mb-6 border border-white/5"> <!-- خلفية الحذاء -->
+                    <img src="/metcon 6 pro.webp" class="product-img w-4/5 transition-all duration-700"> <!-- صورة الحذاء الثالث -->
+                </div>
+                <div class="flex justify-between items-start"> <!-- بيانات المنتج الثالث -->
+                    <div><h3 class="text-xl font-bold italic uppercase">Metcon 6 Pro</h3><p class="text-gray-500 text-sm">Training Elite</p></div> <!-- الاسم والنوع -->
+                    <p class="text-xl font-black">$140</p> <!-- السعر -->
+                </div>
+            </div>
+            <div class="product-card group cursor-pointer"> <!-- كارت المنتج الرابع -->
+                <div class="bg-[#0a0a0a] aspect-square rounded-[50px] flex items-center justify-center relative overflow-hidden mb-6 border border-white/5"> <!-- خلفية الحذاء -->
+                    <img src="/air max 270.webp" class="product-img w-4/5 transition-all duration-700"> <!-- صورة الحذاء الرابع -->
+                </div>
+                <div class="flex justify-between items-start"> <!-- بيانات المنتج الرابع -->
+                    <div><h3 class="text-xl font-bold italic uppercase">Air Max 270</h3><p class="text-gray-500 text-sm">Black White</p></div> <!-- الاسم والنوع -->
+                    <p class="text-xl font-black">$130</p> <!-- السعر -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 px-10 container mx-auto"> <!-- قسم "هندسة المستقبل" للابتكارات -->
+        <div class="grid lg:grid-cols-2 gap-24 items-center"> <!-- تقسيم القسم لنصفين (صورة الشعار ونصوص التقدم) -->
+            <div class="order-2 lg:order-1 relative group"> <!-- الجزء الأيسر: صورة الشعار مع تأثيرات هوفر -->
+                <div class="absolute -inset-10 bg-red-600/20 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition duration-1000"></div> <!-- توهج يظهر عند الوقوف على الشعار -->
+                <img src="/nike logo.webp" class="rounded-[60px] relative z-10 grayscale hover:grayscale-0 transition duration-1000 cursor-pointer shadow-2xl"> <!-- صورة الشعار بالأبيض والأسود تتحول للألوان -->
+            </div>
+            <div class="order-1 lg:order-2"> <!-- الجزء الأيمن: نصوص الابتكار وأشرطة التقدم -->
+                <h2 class="text-7xl font-black italic uppercase mb-8 leading-none">Engineering <br> the Future</h2> <!-- عنوان القسم -->
+                <p class="text-gray-400 text-lg mb-12 leading-loose">At Nike, we believe innovation isn't just about speed—it's about the harmony between the athlete and the earth.</p> <!-- نص وصفي -->
+                <div class="grid grid-cols-2 gap-10"> <!-- حاوية أشرطة التقدم (Progress Bars) -->
+                    <div> <!-- شريط الاستجابة (Responsive) -->
+                        <h4 class="text-white font-black uppercase text-xs tracking-[0.3em] mb-4">Responsive</h4> <!-- اسم السمة -->
+                        <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-red-600 w-[90%]"></div></div> <!-- الشريط الأحمر بنسبة 90% -->
+                    </div>
+                    <div> <!-- شريط الاستدامة (Sustainability) -->
+                        <h4 class="text-white font-black uppercase text-xs tracking-[0.3em] mb-4">Sustainability</h4> <!-- اسم السمة -->
+                        <div class="h-1 w-full bg-white/10 rounded-full overflow-hidden"><div class="h-full bg-red-600 w-[75%]"></div></div> <!-- الشريط الأحمر بنسبة 75% -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 mb-20"> <!-- قسم الدعوة للاشتراك (Call to Action) -->
+        <div class="bg-white rounded-[60px] py-32 px-10 text-black flex flex-col items-center text-center overflow-hidden relative"> <!-- كارت أبيض ضخم بمنتصف الصفحة -->
+            <div class="absolute top-0 right-0 p-10 opacity-5 pointer-events-none"> <!-- شعار خلفي مائي (Watermark) داخل الكارت -->
+                <svg viewBox="0 0 24 24" fill="black" class="w-96"><path d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108l-.164.125c-.411.329-.8.658-1.15.983-.141.131-.233.223-.233.223l.114-.141C5.641 7.641 7.35 6.131 9.383 5.438c1.192-.403 2.441-.531 3.72-.383l7.897 3.664z"/></svg> <!-- أيقونة الشعار -->
+            </div>
+            <h2 class="text-6xl md:text-8xl font-black italic uppercase mb-8 z-10">Join the Family</h2> <!-- عنوان دعوة الانضمام -->
+            <p class="max-w-xl text-xl font-medium mb-12 text-gray-700 z-10 italic">"There is no finish line. Only the next mile."</p> <!-- مقولة مشهورة لنايكي -->
+            <div class="flex flex-col md:flex-row gap-6 z-10 w-full justify-center"> <!-- حاوية أزرار التسجيل -->
+                <button class="bg-black text-white px-16 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-red-600 transition duration-500">Sign Up Free</button> <!-- زر إنشاء حساب -->
+                <button class="bg-transparent border-2 border-black text-black px-16 py-6 rounded-full font-black uppercase tracking-widest text-xs hover:bg-black hover:text-white transition duration-500">Member Login</button> <!-- زر تسجيل الدخول -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-24 px-10 border-t border-white/5"> <!-- قسم تذييل الصفحة (Footer) باللون الأسود -->
+        <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-16"> <!-- شبكة الفوتر لتقسيم الروابط -->
+            <div class="col-span-2 md:col-span-1"> <!-- الجزء الأول: اللوجو والرسالة -->
+                <svg viewBox="0 0 24 24" fill="white" class="w-12 mb-8"><path d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108l-.164.125c-.411.329-.8.658-1.15.983-.141.131-.233.223-.233.223l.114-.141C5.641 7.641 7.35 6.131 9.383 5.438c1.192-.403 2.441-.531 3.72-.383l7.897 3.664z"/></svg> <!-- الشعار -->
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs uppercase font-bold tracking-tighter">Innovation and inspiration for every athlete in the world.</p> <!-- رسالة الشركة -->
+            </div>
+            <div> <!-- العمود الثاني: روابط التنقل -->
+                <h4 class="text-white font-black uppercase text-[10px] tracking-[0.4em] mb-8">Navigation</h4> <!-- عنوان القائمة -->
+                <ul class="text-gray-500 space-y-4 text-xs font-bold uppercase tracking-widest"> <!-- روابط القائمة -->
+                    <li><a href="#" class="hover:text-red-500 transition">Store Locator</a></li>
+                    <li><a href="#" class="hover:text-red-500 transition">Nike Journal</a></li>
+                    <li><a href="#" class="hover:text-red-500 transition">Feedback</a></li>
+                </ul>
+            </div>
+            <div> <!-- العمود الثالث: روابط الدعم -->
+                <h4 class="text-white font-black uppercase text-[10px] tracking-[0.4em] mb-8">Support</h4> <!-- عنوان القائمة -->
+                <ul class="text-gray-500 space-y-4 text-xs font-bold uppercase tracking-widest"> <!-- روابط الدعم -->
+                    <li><a href="#" class="hover:text-red-500 transition">Order Status</a></li>
+                    <li><a href="#" class="hover:text-red-500 transition">Shipping</a></li>
+                    <li><a href="#" class="hover:text-red-500 transition">Payment</a></li>
+                </ul>
+            </div>
+            <div> <!-- العمود الرابع: السوشيال ميديا -->
+                <h4 class="text-white font-black uppercase text-[10px] tracking-[0.4em] mb-8">Follow Us</h4> <!-- عنوان القائمة -->
+                <div class="flex gap-4"> <!-- أيقونات التواصل الاجتماعي -->
+                    <div class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer">IG</div> <!-- انستغرام -->
+                    <div class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer">TW</div> <!-- تويتر -->
+                    <div class="w-10 h-10 rounded-xl glass border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer">YT</div> <!-- يوتيوب -->
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6"> <!-- شريط الحقوق السفلي -->
+            <p class="text-gray-600 text-[9px] uppercase font-black tracking-[0.2em]">© 2025 Nike, Inc. All Rights Reserved</p> <!-- نص حقوق الملكية -->
+            <div class="flex gap-8 text-[9px] text-gray-600 font-black uppercase tracking-[0.2em]"> <!-- روابط قانونية -->
+                <a href="#">Guides</a><a href="#">Terms of Sale</a><a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer> <!-- نهاية الفوتر -->
+
+</body> <!-- نهاية محتوى الجسم -->
+</html> <!-- نهاية ملف الـ HTML -->
